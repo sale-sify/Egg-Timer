@@ -41,9 +41,9 @@ const pochePage = document.querySelector('.poche');
 
     // Les timer 
 let timerALaCoque = document.querySelector('#timer-a-la-coque > span');
-let timerMollet = document.querySelector('#timer-mollet');
-let timerDur = document.querySelector('#timer-dur');
-let timerPoche = document.querySelector('#timer-poche');
+let timerMollet = document.querySelector('#timer-mollet > span');
+let timerDur = document.querySelector('#timer-dur > span');
+let timerPoche = document.querySelector('#timer-poche > span');
 
     // Autre
 const thank = document.querySelector('.Thank')
@@ -125,7 +125,7 @@ for (let i = 0; i < backBtn.length; i++){
 
 
 // Mise en place du timer A la coque et de son activation au click du bouton play
-let timer;
+let timer1;
 let tempsALaCoque = 180;
 function decrementTimeALaCoque () {
     if (tempsALaCoque > 0) {
@@ -134,7 +134,7 @@ function decrementTimeALaCoque () {
     } else {
         alert('Les oeufs sont prets !');
         thank.style.display = 'flex';
-        clearInterval(timer);
+        clearInterval(timer1);
         tempsALaCoque = 180
     }
 };
@@ -144,9 +144,9 @@ function decrementTimeALaCoque () {
 playBtnALaCoque.addEventListener('click', 
     function () {
         if (timerALaCoque.textContent === '180'){
-            timer = setInterval(decrementTimeALaCoque, 1000);
+            timer1 = setInterval(decrementTimeALaCoque, 1000);
         } else {
-            clearInterval(timer);
+            clearInterval(timer1);
         }
     }
 );
@@ -154,7 +154,7 @@ playBtnALaCoque.addEventListener('click',
 restartBtnALaCoque.addEventListener('click',
     function () {
         if (tempsALaCoque !== 180) {
-            clearInterval(timer);
+            clearInterval(timer1);
             timerALaCoque.textContent = 180;
             tempsALaCoque = 180;
         }
@@ -163,14 +163,14 @@ restartBtnALaCoque.addEventListener('click',
 
  stopBtnALaCoque.addEventListener('click', 
     function () {
-        clearInterval(timer);
+        clearInterval(timer1);
     }
  );
 
 
 
  // Mise en place du timer Mollet et de son activation au click du bouton play
-
+let timer2;
 let tempsMollet = 360;
 function decrementTimeMollet () {
     if (tempsMollet > 0) {
@@ -179,7 +179,7 @@ function decrementTimeMollet () {
     } else {
         alert('Les oeufs sont prets !');
         thank.style.display = 'flex';
-        clearInterval(timer);
+        clearInterval(timer2);
         tempsMollet = 360
     }
 };
@@ -188,10 +188,10 @@ function decrementTimeMollet () {
 
 playBtnMollet.addEventListener('click', 
     function () {
-        if (timerMollet.textContent === '180'){
-            timer = setInterval(decrementTimeMollet, 1000);
+        if (timerMollet.textContent === '360'){
+            timer2 = setInterval(decrementTimeMollet, 1000);
         } else {
-            clearInterval(timer);
+            clearInterval(timer2);
         }
     }
 );
@@ -199,7 +199,7 @@ playBtnMollet.addEventListener('click',
 restartBtnMollet.addEventListener('click',
     function () {
         if (tempsMollet !== 360) {
-            clearInterval(timer);
+            clearInterval(timer2);
             timerMollet.textContent = 360;
             tempsMollet = 360;
         }
@@ -208,14 +208,14 @@ restartBtnMollet.addEventListener('click',
 
  stopBtnMollet.addEventListener('click', 
     function () {
-        clearInterval(timer);
+        clearInterval(timer2);
     }
  );
 
 
 
 // Mise en place du timer Dur et de son activation au click du bouton play
-
+let timer3;
 let tempsDur = 540;
 function decrementTimeDur () {
     if (tempsDur > 0) {
@@ -224,7 +224,7 @@ function decrementTimeDur () {
     } else {
         alert('Les oeufs sont prets !');
         thank.style.display = 'flex';
-        clearInterval(timer);
+        clearInterval(timer3);
         tempsDur = 540
     }
 };
@@ -233,10 +233,10 @@ function decrementTimeDur () {
 
 playBtnDur.addEventListener('click', 
     function () {
-        if (timerDur.textContent === '180'){
-            timer = setInterval(decrementTimeDur, 1000);
+        if (timerDur.textContent === '540'){
+            timer3 = setInterval(decrementTimeDur, 1000);
         } else {
-            clearInterval(timer);
+            clearInterval(timer3);
         }
     }
 );
@@ -244,7 +244,7 @@ playBtnDur.addEventListener('click',
 restartBtnDur.addEventListener('click',
     function () {
         if (tempsDur !== 540) {
-            clearInterval(timer);
+            clearInterval(timer3);
             timerDur.textContent = 540;
             tempsDur = 540;
         }
@@ -253,13 +253,13 @@ restartBtnDur.addEventListener('click',
 
  stopBtnDur.addEventListener('click', 
     function () {
-        clearInterval(timer);
+        clearInterval(timer3);
     }
  );
 
 
 // Mise en place du timer Poche et de son activation au click du bouton play
-
+let timer4;
 let tempsPoche = 120;
 function decrementTimePoche () {
     if (tempsPoche > 0) {
@@ -268,7 +268,7 @@ function decrementTimePoche () {
     } else {
         alert('Les oeufs sont prets !');
         thank.style.display = 'flex';
-        clearInterval(timer);
+        clearInterval(timer4);
         tempsPoche = 120
     }
 };
@@ -277,10 +277,10 @@ function decrementTimePoche () {
 
 playBtnPoche.addEventListener('click', 
     function () {
-        if (timerPoche.textContent === '180'){
-            timer = setInterval(decrementTimePoche, 1000);
+        if (timerPoche.textContent === '120'){
+            timer4 = setInterval(decrementTimePoche, 1000);
         } else {
-            clearInterval(timer);
+            clearInterval(timer4);
         }
     }
 );
@@ -288,7 +288,7 @@ playBtnPoche.addEventListener('click',
 restartBtnPoche.addEventListener('click',
     function () {
         if (tempsPoche !== 120) {
-            clearInterval(timer);
+            clearInterval(timer4);
             timerPoche.textContent = 120;
             tempsPoche = 120;
         }
@@ -297,9 +297,11 @@ restartBtnPoche.addEventListener('click',
 
  stopBtnPoche.addEventListener('click', 
     function () {
-        clearInterval(timer);
+        clearInterval(timer4);
     }
  );
+
+
 
 
 

@@ -126,16 +126,16 @@ for (let i = 0; i < backBtn.length; i++){
 
 // Mise en place du timer A la coque et de son activation au click du bouton play
 let timer;
-let temps = 180;
-function decrementTime () {
-    if (temps > 0) {
-        timerALaCoque.textContent = temps;
-        temps --;
+let tempsALaCoque = 180;
+function decrementTimeALaCoque () {
+    if (tempsALaCoque > 0) {
+        timerALaCoque.textContent = tempsALaCoque;
+        tempsALaCoque --;
     } else {
         alert('Les oeufs sont prets !');
         thank.style.display = 'flex';
         clearInterval(timer);
-        temps = 180
+        tempsALaCoque = 180
     }
 };
 
@@ -144,7 +144,7 @@ function decrementTime () {
 playBtnALaCoque.addEventListener('click', 
     function () {
         if (timerALaCoque.textContent === '180'){
-            timer = setInterval(decrementTime, 1000);
+            timer = setInterval(decrementTimeALaCoque, 1000);
         } else {
             clearInterval(timer);
         }
@@ -153,10 +153,10 @@ playBtnALaCoque.addEventListener('click',
 
 restartBtnALaCoque.addEventListener('click',
     function () {
-        if (temps !== 180) {
+        if (tempsALaCoque !== 180) {
             clearInterval(timer);
             timerALaCoque.textContent = 180;
-            temps = 180;
+            tempsALaCoque = 180;
         }
     }
  );
@@ -169,9 +169,139 @@ restartBtnALaCoque.addEventListener('click',
 
 
 
+ // Mise en place du timer Mollet et de son activation au click du bouton play
+
+let tempsMollet = 360;
+function decrementTimeMollet () {
+    if (tempsMollet > 0) {
+        timerMollet.textContent = tempsMollet;
+        tempsMollet --;
+    } else {
+        alert('Les oeufs sont prets !');
+        thank.style.display = 'flex';
+        clearInterval(timer);
+        tempsMollet = 360
+    }
+};
 
 
 
+playBtnMollet.addEventListener('click', 
+    function () {
+        if (timerMollet.textContent === '180'){
+            timer = setInterval(decrementTimeMollet, 1000);
+        } else {
+            clearInterval(timer);
+        }
+    }
+);
+
+restartBtnMollet.addEventListener('click',
+    function () {
+        if (tempsMollet !== 360) {
+            clearInterval(timer);
+            timerMollet.textContent = 360;
+            tempsMollet = 360;
+        }
+    }
+ );
+
+ stopBtnMollet.addEventListener('click', 
+    function () {
+        clearInterval(timer);
+    }
+ );
 
 
-;
+
+// Mise en place du timer Dur et de son activation au click du bouton play
+
+let tempsDur = 540;
+function decrementTimeDur () {
+    if (tempsDur > 0) {
+        timerDur.textContent = tempsDur;
+        tempsDur --;
+    } else {
+        alert('Les oeufs sont prets !');
+        thank.style.display = 'flex';
+        clearInterval(timer);
+        tempsDur = 540
+    }
+};
+
+
+
+playBtnDur.addEventListener('click', 
+    function () {
+        if (timerDur.textContent === '180'){
+            timer = setInterval(decrementTimeDur, 1000);
+        } else {
+            clearInterval(timer);
+        }
+    }
+);
+
+restartBtnDur.addEventListener('click',
+    function () {
+        if (tempsDur !== 540) {
+            clearInterval(timer);
+            timerDur.textContent = 540;
+            tempsDur = 540;
+        }
+    }
+ );
+
+ stopBtnDur.addEventListener('click', 
+    function () {
+        clearInterval(timer);
+    }
+ );
+
+
+// Mise en place du timer Poche et de son activation au click du bouton play
+
+let tempsPoche = 120;
+function decrementTimePoche () {
+    if (tempsPoche > 0) {
+        timerPoche.textContent = tempsPoche;
+        tempsPoche --;
+    } else {
+        alert('Les oeufs sont prets !');
+        thank.style.display = 'flex';
+        clearInterval(timer);
+        tempsPoche = 120
+    }
+};
+
+
+
+playBtnPoche.addEventListener('click', 
+    function () {
+        if (timerPoche.textContent === '180'){
+            timer = setInterval(decrementTimePoche, 1000);
+        } else {
+            clearInterval(timer);
+        }
+    }
+);
+
+restartBtnPoche.addEventListener('click',
+    function () {
+        if (tempsPoche !== 120) {
+            clearInterval(timer);
+            timerPoche.textContent = 120;
+            tempsPoche = 120;
+        }
+    }
+ );
+
+ stopBtnPoche.addEventListener('click', 
+    function () {
+        clearInterval(timer);
+    }
+ );
+
+
+
+//  Et merci la Tchim !
+ 
